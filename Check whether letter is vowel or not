@@ -1,0 +1,15 @@
+import java.util.Scanner;
+public class Main
+{
+	public static void main(String[] args) {
+	    Scanner sc = new Scanner(System.in);
+	    char l;
+	     boolean value = false;
+	    l = sc.next().charAt(0);
+	    if(l == 'A'||l=='E' || l=='I'||l=='O'||l=='U')
+	     value = true;
+	   else if(l == 'a'||l=='e' || l=='i'||l=='o'||l=='u')
+	    value = true;
+		System.out.println(value);
+	}
+}
