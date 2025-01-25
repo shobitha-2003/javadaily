@@ -1,0 +1,31 @@
+import java.util.Scanner;
+
+public class sortDecreasing{
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        int size;
+        System.out.println("Enter the size");
+        size = sc.nextInt();
+        int[] array = new int[size];
+        System.out.println("Enter the elements");
+        for(int i=0;i<size;i++){
+            array = sc.nextInt();
+        }
+        System.out.println("After sorting in decreasing order");
+        for(int i=1;i<size;i++){
+            for(int j=0;j<i;j++){
+                if(array[i]>array[j]){
+                    int swap = array[j];
+                    array[j]=array[i];
+                    array[i]=swap;
+                    
+                }
+            }
+        }
+        for(int i=0;i<size;i++){
+            System.out.print(array[i]+" ");
+        }
+    }
+    
+}
