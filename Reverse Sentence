@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class revSentence {
+    
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the sentence");
+        String str = sc.nextLine();
+        String rev = "";
+        String[] words = str.split(" ");
+        int len = words.length - 1;
+        while(len>=0){
+            rev += words[len] + " ";
+            len--;
+        }
+        System.out.println(rev);
+    }
+    
+}
