@@ -1,0 +1,24 @@
+import java.util.Scanner;
+
+public class RevEachWordInSen {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] words = str.split(" ");
+        for(int i=0;i<words.length;i++){
+            words[i] = revWord(words[i]);
+        }
+        for(int i=0;i<words.length;i++){
+            System.err.print(words[i]+" ");
+        }
+    }
+    public static String revWord(String word){
+        String rev = "";
+        int len = word.length()-1;
+        while(len>=0){
+            rev += word.charAt(len);
+            len--;
+        }
+        return rev;
+    }
+}
