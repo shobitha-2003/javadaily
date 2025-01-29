@@ -1,0 +1,37 @@
+import java.util.Scanner;
+
+public class IPAddress {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        String str = sc.nextLine();
+        String[] ip = str.split("\\.");
+        if(ip.length!=4){
+            System.out.println("Invalid input");
+            return;
+        }
+        for(String address:ip){
+            try{
+            int value = Integer.parseInt(address);
+            if(value<0 || value>255){
+                System.out.println("Invalid input");
+                return;
+            }
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            return;
+        }
+
+        }
+        if(ip[0].equals("127")){
+            System.out.println("::1");
+            return;
+        }
+        String[] octets = new String[4];
+        for(int i=0;i<ip.length;i++){
+            octets[i] = String.format("%02X", Integer.parseInt(ip[i]));
+        }
+        String ipAddress = ":::FFFF:" + octets[0] + octets[1]+":"+octets[2]+octets[3];
+        System.out.println(ipAddress);
+    }
+}
