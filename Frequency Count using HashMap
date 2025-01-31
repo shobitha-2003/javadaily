@@ -1,0 +1,29 @@
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Scanner;
+
+public class FreqUsingHash {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the number of elements");
+        int num = sc.nextInt();
+        System.out.println("Enter the elements");
+        int[] array = new int[num];
+        for(int i=0;i<num;i++){
+            array[i] = sc.nextInt();
+        }
+        System.out.println("Enter the frequency of occurs");
+        int frequency = sc.nextInt();
+        Map<Integer,Integer> freq = new HashMap<>();
+        for(int number:array){
+            freq.put(number,freq.getOrDefault(number,0)+1);
+        }
+        for(Map.Entry<Integer,Integer> entry:freq.entrySet()){
+            if(entry.getValue()>=frequency){
+                System.out.print(entry.getKey()+" ");
+            }
+        }
+
+    }
+    
+}
