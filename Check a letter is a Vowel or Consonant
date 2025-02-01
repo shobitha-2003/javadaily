@@ -1,0 +1,17 @@
+import java.util.Scanner;
+
+public class ToCheckVowelOrNot {
+
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char letter = sc.next().charAt(0);
+        char let = Character.toUpperCase(letter);
+        if(let == 'A' || let == 'E' || let=='I'||let=='O'||let=='U'){
+            System.out.println("Vowel");
+        }else{
+            System.out.println("Consonant");
+        }
+   
+    }
+    
+}
