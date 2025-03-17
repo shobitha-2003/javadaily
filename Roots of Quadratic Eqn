@@ -1,0 +1,40 @@
+import java.util.Scanner;
+
+public class RootsOfEqn {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the co-efficient of a");
+        double a = sc.nextInt();
+        System.out.println("Enter the co-efficient of b");
+        double b = sc.nextInt();
+        System.out.println("Enter the co-efficient of c");
+        double c= sc.nextInt();
+
+        if (a == 0) {
+            System.out.println("Not a quadratic equation. 'a' cannot be zero.");
+        } 
+        else{
+            double d= b * b - (4*a*c);
+            if(d>0){
+            double Root1 = (- b + Math.sqrt(d)) /(2*a);
+            double Root2 = (- b - Math.sqrt(d)) /(2*a);
+            System.out.println("Roots are real and distinct");
+            System.out.println("Root1: "+Root1);
+            System.out.println("Root2: "+Root2);
+        }
+        else if(d==0){
+            double root = -b/(2*a);
+            System.out.println("Roots are Equal");
+            System.out.println("Root: "+root);
+        }else{
+            double real = -b/(2*a);
+            double imaginary = Math.sqrt(-d)/(2*a);
+            System.out.println("The roots are real and imaginary");
+            System.out.println("Root1: "+ real+" + "+imaginary+"i");
+            System.out.println("Root2: "+real+" - "+imaginary+"i");
+
+        }
+
+    }
+
+}
