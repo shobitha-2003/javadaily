@@ -1,0 +1,18 @@
+import java.util.Scanner;
+
+public class CheckAlphabet {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        char letter = sc.next().charAt(0);
+        int num = (int)(letter);
+        if(num>=65 && num<=90){
+            System.out.println("It is uppercase letter and value of letter is "+num);
+        }
+        else if(num>=97 && num<=122){
+            System.out.println("It is lowercase letter and value of letter is "+num);
+        }else{
+            System.out.println("It is not a Letter");
+        }
+    }
+    
+}
