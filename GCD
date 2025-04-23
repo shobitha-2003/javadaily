@@ -1,0 +1,27 @@
+import java.util.Scanner;
+
+public class gcd {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the two positive numbers");
+        int num1 = sc.nextInt();
+        int num2 = sc.nextInt();
+        num1 = Math.abs(num1);
+        num2 = Math.abs(num2);
+        if(num1 == 0 && num2 ==0){
+            System.out.println("GCD of two are undefined");
+            return;
+        }
+        int gcd = calculateGcd(num1,num2);
+        System.out.println(gcd);
+        
+    }
+    public static int calculateGcd(int a,int b){
+        if(b==0){
+            return a;
+        }else
+        return calculateGcd(b, a%b);
+        
+    }
+    
+}
