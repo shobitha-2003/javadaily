@@ -1,0 +1,31 @@
+import java.util.Scanner;
+class Main{
+public static void main(String[] args){
+
+Scanner sc = new Scanner(System.in);
+int N = sc.nextInt();
+int[] arr = new int[N];
+for(int i=0;i<N;i++){
+arr[i] = sc.nextInt();
+}
+if(N<2){
+    System.out.println("It should contain atleast 2 numbers");
+    return;
+}
+int max = Integer.MIN_VALUE;
+int secMax = Integer.MIN_VALUE;
+for(int i=0;i<N;i++){
+if(max<arr[i]){
+secMax = max;
+max = arr[i];
+}
+else if(arr[i]<max && arr[i]>secMax){
+secMax = arr[i];
+}
+}
+if(secMax == Integer.MIN_VALUE)
+System.out.println("There is no Largest NUmber");
+else
+System.out.println("Second largest Number is "+secMax);
+}
+}
